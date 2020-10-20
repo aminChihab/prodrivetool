@@ -1,0 +1,30 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:52341",
+      "sslPort": 44337
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "AFAS_EVENEMENT_API": "https://33391.rest.afas.online/ProfitRestServices/connectors/AMIN_MP_CrId_Evenementen",
+        "AFAS_EVENEMENT_FACTUUR_API": "https://33391.rest.afas.online/ProfitRestServices/connectors/AMIN_MP_BcCo_CdId",
+        "AFAS_FACTUUR_API": "https://33391.rest.afas.online/ProfitRestServices/connectors/KnCourseMember",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "postersopmetaal": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    }
+  }
+}

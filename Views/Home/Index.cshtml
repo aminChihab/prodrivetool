@@ -1,0 +1,59 @@
+﻿@model IEnumerable<postersopmetaal.Models.Evenement>
+
+@{
+    ViewData["Title"] = "Home Page";
+    IEnumerable<Evenement> factuurEvenementen = new List<Evenement>();
+}
+
+<div class="text-center">
+    @if (!String.IsNullOrEmpty(ViewBag.response))
+    {
+        <h3 >@ViewBag.response</h3>
+    }
+    <table style="width:100%;" id="evenementen_tabel">
+        <form asp-controller="Home" asp-action="Index" method="get">
+            <thead>
+                <th style="text-align:center;">Selecteer Alles<br /><input type="checkbox" id="selecteer_alles" onclick="toggle(this)"></th>
+                <th><input id="pjmanager" name="PJManager" placeholder="PJManager..." /></th>
+                <th><input id="debiteurnaam" name="Debiteurnaam" placeholder="Debiteurnaam..." /></th>
+                <th><input id="project" name="Project" placeholder="Project..." /></th>
+                <th><input id="datum" name="Cursusdatum" placeholder="Cursusdatum..." /></th>
+                <th>Beschikbare_plaatsen</th>
+                <th>Factuurbedrag</th>
+            </thead>
+            <input type="submit" value="Filter" hidden />
+        </form>
+            <form asp-controller="Home" asp-action="Index" method="post">
+                <tbody>
+                    @{ int counter = 0;}
+                    @foreach (Evenement evenement in Model)
+                    {
+                        <tr>
+                            <td><input type="checkbox" name="CrId[@counter]" value="@evenement.CrId" class="selecteer"></td>
+                            <td>@evenement.PJmanager</td>
+                            <td>@evenement.Debiteurnaam</td>
+                            <td>@evenement.Project</td>
+                            <td>@evenement.Cursusdatum.ToString("dd MMMM, yyyy")</td>
+                            <td style="text-align:center">@evenement.Beschikbare_plaatsen</td>
+                            <td style="text-align:center">@evenement.DfPr</td>
+                        </tr>
+                        counter++;
+                    }
+                </tbody>
+                <button type="submit">Maak factuur aan</button>
+            </form>
+    </table>
+
+    <br />
+    
+    <button id="filterbutton"  hidden></button>
+</div>
+<script language="JavaScript">
+    function toggle(source) {
+        checkboxes = document.getElementsByClassName('selecteer');
+        source = document.getElementById(source.id);
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }    
+</script>
