@@ -12,6 +12,7 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
+        "BASE64_AFAS_AUTH": "PHRva2VuPjx2ZXJzaW9uPjE8L3ZlcnNpb24+PGRhdGE+Mjc0ODNCQTFDNkE0NDM5N0IxRDM2QUY3N0JFQjA5RkE2NkQ4NkQ4MDQ2OTdERUQ4NTRDMUQ2QUE3NEVCMjM4RDwvZGF0YT48L3Rva2VuPg==",
         "AFAS_EVENEMENT_API": "https://33391.rest.afas.online/ProfitRestServices/connectors/AMIN_MP_CrId_Evenementen",
         "AFAS_EVENEMENT_FACTUUR_API": "https://33391.rest.afas.online/ProfitRestServices/connectors/AMIN_MP_BcCo_CdId",
         "AFAS_FACTUUR_API": "https://33391.rest.afas.online/ProfitRestServices/connectors/KnCourseMember",
